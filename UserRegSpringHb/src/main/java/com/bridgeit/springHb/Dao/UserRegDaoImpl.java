@@ -2,6 +2,8 @@ package com.bridgeit.springHb.Dao;
 
 import java.util.List;
 
+import javax.servlet.http.HttpSession;
+
 import org.hibernate.Query;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
@@ -11,6 +13,7 @@ import org.springframework.stereotype.Repository;
 
 import org.springframework.web.servlet.ModelAndView;
 
+import com.bridgeit.springHb.model.Employee;
 import com.bridgeit.springHb.model.UserReg;
 
 @Repository
@@ -18,7 +21,6 @@ import com.bridgeit.springHb.model.UserReg;
 public class UserRegDaoImpl implements UserRegDao
 {
 	@Autowired
-	
 	SessionFactory sessionFactory;
 	
 	@Override
@@ -84,5 +86,14 @@ public class UserRegDaoImpl implements UserRegDao
 		}*/
 		return null;
 	}
-	
+
+	@Override
+	public void logout(HttpSession session) {
+		// TODO Auto-generated method stub
+		if(session!=null)
+		{
+			session.invalidate();
+		}
+	}
+
 }

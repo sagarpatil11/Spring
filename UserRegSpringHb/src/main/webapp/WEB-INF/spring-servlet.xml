@@ -41,7 +41,9 @@
 				<value>
 					com.bridgeit.springHb.model.UserReg				
 				</value>
-			
+				<value>
+					com.bridgeit.springHb.model.Employee				
+				</value>
 			
 			</list>
 		</property>
