@@ -29,23 +29,16 @@ public class UserRegDaoImpl implements UserRegDao
 		// TODO Auto-generated method stub
 		Session session=sessionFactory.getCurrentSession();
 		//Transaction t=session.beginTransaction();
-		try{
-		session.save(user);
-	//	t.commit();
-		//return new ModelAndView("registration");
+		try
+		{
+			session.save(user);
+	
 		}
 		catch(Exception e)
 		{
-			e.printStackTrace();
-			return new ModelAndView("redirect:userregistration");
+			System.out.println("Error");
+			return new ModelAndView("redirect:SignUp");
 		}
-		/*finally 
-		{
-			if(session!=null)
-			{
-				session.close();
-			}
-		}*/
 		return null;
 		
 	

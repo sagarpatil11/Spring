@@ -10,11 +10,24 @@
 <body>
 	<h2>Login</h2>
 	<form action="loginvalidation" method="post">
-			${errmsg}<br>
-			Email<input type="email" name="email" required>
-			Password<input type="password" name="password" required>
-			<input type="submit" value="Login">
-			<a href="userregistration">Register</a>
+		${errmsg}
+		<table border="2 solid black">
+			<tr>
+				<td>Email</td>
+				<td><input type="email" name="email" required></td>
+			</tr>
+			<tr>
+				<td>Password</td>
+				<td><input type="password" name="password" required></td>
+			</tr>
+			<tr>
+				<td></td>
+				<td><input type="submit" value="Login"></td>
+			</tr>
+			
+		</table>
+		<br>
+		<a href="SignUp">SignUp</a>	
 	</form>
 </body>
 </html>

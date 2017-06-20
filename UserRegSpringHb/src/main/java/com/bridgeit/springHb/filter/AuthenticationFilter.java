@@ -31,22 +31,29 @@ public class AuthenticationFilter implements Filter {
 		
 		HttpSession session=req.getSession();
 		Integer uid=(Integer) session.getAttribute("uid");
-		System.out.println("in");
+		//System.out.println("chcking");
 		if(uid==null)
 		{
-			System.out.println("logout");
+			//System.out.println("logout");
 			//resp.sendRedirect("/UserRegSpringHb/src/main/webapp/WEB-INF/views/login.jsp");
-			resp.sendRedirect("/UserRegSpringHb/login.jsp");
+			System.out.println("redirected to login");
+			resp.sendRedirect("login");
+			
+		} 
+		else 
+		{
+			//System.out.println("checked");
+			// pass the request along the filter chain
+			chain.doFilter(req, resp);
 		}
-
-		// pass the request along the filter chain
-		chain.doFilter(req, resp);
+		
 	}
 
 
 	@Override
 	public void destroy() {
 		// TODO Auto-generated method stub
+		
 		
 	}
 

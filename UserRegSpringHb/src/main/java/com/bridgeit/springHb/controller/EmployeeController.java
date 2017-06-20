@@ -34,7 +34,7 @@ public class EmployeeController
 	public ModelAndView addEmployee(HttpServletRequest request,Employee employee)
 	{
 		System.out.println("hiiiiii");
-		int uid=(int) request.getSession().getAttribute("uid");
+		Integer uid=Integer.parseInt(request.getSession().getAttribute("uid").toString());
 		System.out.println(uid);
 		employee.setUid(uid);
 		employeeService.addEmployee(employee);
@@ -44,7 +44,8 @@ public class EmployeeController
 	@RequestMapping(value="/Employee_List")
 	public ModelAndView employeeList(HttpServletRequest request)
 	{
-		int uid=(int) request.getSession().getAttribute("uid");
+		//Integer uid=Integer.parseInt(request.getSession().getAttribute("uid").toString());
+		Integer uid=(Integer)request.getSession().getAttribute("uid");
 		List<Employee> emplist=employeeService.getEmployee(uid);
 		
 		return new ModelAndView("employee_list","emplist",emplist);
@@ -71,7 +72,7 @@ public class EmployeeController
 	@RequestMapping(value="/Update_Employee",method=RequestMethod.POST)
 	public ModelAndView updateEmp(HttpServletRequest request,Employee employee)
 	{
-		int uid=(int) request.getSession().getAttribute("uid");
+		Integer uid=Integer.parseInt(request.getSession().getAttribute("uid").toString());
 		System.out.println(uid);
 		employee.setUid(uid);
 		employeeService.updateEmployee(employee);

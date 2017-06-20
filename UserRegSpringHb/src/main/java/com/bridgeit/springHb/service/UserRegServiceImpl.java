@@ -21,6 +21,7 @@ public class UserRegServiceImpl implements UserRegService
 	UserRegDao userRegDao;
 	
 	@Override
+	//@Transactional
 	public void addUser(UserReg user) 
 	{
 		// TODO Auto-generated method stub
