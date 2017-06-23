@@ -1,0 +1,5 @@
+com/bridgeit/RestCrudeOp/configuration/AppConfig.class
+com/bridgeit/RestCrudeOp/controller/StudentController.class
+com/bridgeit/RestCrudeOp/model/StudentModel.class
+com/bridgeit/RestCrudeOp/Dao/StudentDao.class
+com/bridgeit/RestCrudeOp/configuration/AppInitializer.class
